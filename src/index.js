@@ -4,20 +4,22 @@ import greeting from './cli.js';
 const ATTEMPTS = 3;
 
 export default (game) => {
+  let attemptsRemaind = ATTEMPTS;
   const { task, engine } = game;
   const name = greeting();
-
   console.log(task);
-  let attemptsRemaind = ATTEMPTS;
 
   while (attemptsRemaind > 0) {
     const [question, answer] = engine();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
+    const correctAnswer = typeof answer !== 'string' ? String(answer) : answer;
 
-    if (answer !== userAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
+    if (correctAnswer !== userAnswer) {
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`
+      );
       break;
     }
 
@@ -25,6 +27,9 @@ export default (game) => {
     attemptsRemaind -= 1;
   }
 
-  const bye = attemptsRemaind > 0 ? `Let's try again, ${name}!` : `Congratulations, ${name}!`;
+  const bye =
+    attemptsRemaind > 0
+      ? `Let's try again, ${name}!`
+      : `Congratulations, ${name}!`;
   console.log(bye);
 };
