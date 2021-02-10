@@ -18,7 +18,7 @@ export default (game) => {
 
     if (correctAnswer !== userAnswer) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
       );
       break;
     }
