@@ -12,8 +12,8 @@ export const engine = () => {
   const first = generateRandomNumber(FIRST_RANGE_MIN, FIRST_RANGE_MAX);
   const step = generateRandomNumber(STEP_RANGE_MIN, STEP_RANGE_MAX);
   const hidenIndex = generateRandomNumber(0, PROGRESSION_SIZE - 1);
-  const progression = [first];
 
+  const progression = [first];
   for (let i = 1; i < PROGRESSION_SIZE; i += 1) {
     progression[i] = progression[i - 1] + step;
   }
