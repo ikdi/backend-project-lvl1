@@ -1,4 +1,4 @@
-import generateRandomNumber from '../utils/generateRandomNumber.js';
+import generateRandomNumber from '../generateRandomNumber.js';
 
 export const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 export const engine = () => {

@@ -1,4 +1,4 @@
-import generateRandomNumber from '../utils/generateRandomNumber.js';
+import generateRandomNumber from '../generateRandomNumber.js';
 
 const actions = ['+', '-', '*'];
 const calculate = (action, num1, num2) => {

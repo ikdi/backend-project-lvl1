@@ -1,4 +1,4 @@
-import generateRandomNumber from '../utils/generateRandomNumber.js';
+import generateRandomNumber from '../generateRandomNumber.js';
 
 const calculate = (num1, num2) => {
   const first = Math.min(num1, num2);
