@@ -4,11 +4,9 @@ const RANGE_MIN = 1;
 const RANGE_MAX = 20;
 
 const calculate = (num1, num2) => {
-  if (num1 === num2) return num1;
-
   const first = Math.min(num1, num2);
   const second = num1 === first ? num2 : num1;
-  let i = Math.round(first / 2);
+  let i = first;
 
   while (i > 1) {
     const restFirst = first % i;
