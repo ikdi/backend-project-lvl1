@@ -13,8 +13,7 @@ const calculate = (num) => {
   return 'yes';
 };
 
-export const task =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export const engine = () => {
   const num = generateRandomNumber(RANGE_MIN, RANGE_MAX);

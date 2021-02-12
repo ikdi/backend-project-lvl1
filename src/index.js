@@ -18,7 +18,7 @@ export default (game) => {
 
     if (correctAnswer !== userAnswer) {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
       break;
     }
@@ -27,8 +27,7 @@ export default (game) => {
     attemptsRemaind -= 1;
   }
 
-  const bye =
-    attemptsRemaind > 0
+  const bye = attemptsRemaind > 0
       ? `Let's try again, ${name}!`
       : `Congratulations, ${name}!`;
   console.log(bye);
