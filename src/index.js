@@ -28,7 +28,7 @@ export default (game) => {
   }
 
   const bye = attemptsRemaind > 0
-      ? `Let's try again, ${name}!`
-      : `Congratulations, ${name}!`;
+    ? `Let's try again, ${name}!`
+    : `Congratulations, ${name}!`;
   console.log(bye);
 };
