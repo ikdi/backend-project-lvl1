@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Brain games",
   "main": "index.js",
   "type": "module",
@@ -31,7 +31,6 @@
   "devDependencies": {
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "prettier": "2.2.1"
   }

@@ -1,6 +1,5 @@
-// eslint-disable implicit-arrow-linebreak
-export const generateRandomNumber = (min = 1, max = 20) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+// eslint-disable-next-line max-len
+export const generateRandomNumber = (min = 1, max = 20) => Math.floor(Math.random() * (max - min + 1) + min);
 
 export const isEven = (num) => num % 2 === 0;
 
