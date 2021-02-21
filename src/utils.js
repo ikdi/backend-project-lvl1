@@ -28,3 +28,12 @@ export const calculateGcd = (num1, num2) => {
 
   return i;
 };
+
+export const makeProgression = (first, step, size) => {
+  const progression = [first];
+  for (let i = 1; i < size; i += 1) {
+    progression[i] = progression[i - 1] + step;
+  }
+
+  return progression;
+};
