@@ -1,4 +1,4 @@
-import generateRandomNumber from '../generateRandomNumber.js';
+import { generateRandomNumber } from '../utils.js';
 
 const PROGRESSION_SIZE = 10;
 const FIRST_RANGE_MIN = 1;
@@ -7,9 +7,7 @@ const STEP_RANGE_MIN = 1;
 const STEP_RANGE_MAX = 10;
 const placeholder = '..';
 
-export const task = 'What number is missing in the progression?';
-
-export const engine = () => {
+export default () => {
   const first = generateRandomNumber(FIRST_RANGE_MIN, FIRST_RANGE_MAX);
   const step = generateRandomNumber(STEP_RANGE_MIN, STEP_RANGE_MAX);
 

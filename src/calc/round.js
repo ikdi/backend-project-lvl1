@@ -1,4 +1,4 @@
-import generateRandomNumber from '../generateRandomNumber.js';
+import { generateRandomNumber } from '../utils.js';
 
 const actions = ['+', '-', '*'];
 const calculate = (action, num1, num2) => {
@@ -14,9 +14,7 @@ const calculate = (action, num1, num2) => {
   }
 };
 
-export const task = 'What is the result of the expression?';
-
-export const engine = () => {
+export default () => {
   const num1 = generateRandomNumber();
   const num2 = generateRandomNumber();
   const action = actions[generateRandomNumber(0, actions.length - 1)];

@@ -3,23 +3,20 @@ import greeting from './cli.js';
 
 const ATTEMPTS = 3;
 
-export default (game) => {
+export default (title, round) => {
   let attemptsRemaind = ATTEMPTS;
-  const { task, engine } = game;
   const name = greeting();
-  console.log(task);
+  console.log(title);
 
   while (attemptsRemaind > 0) {
-    const [question, answer] = engine();
+    const [question, answer] = round();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = typeof answer !== 'string' ? String(answer) : answer;
 
     if (correctAnswer !== userAnswer) {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-      );
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       break;
     }
 
@@ -27,8 +24,6 @@ export default (game) => {
     attemptsRemaind -= 1;
   }
 
-  const bye = attemptsRemaind > 0
-    ? `Let's try again, ${name}!`
-    : `Congratulations, ${name}!`;
+  const bye = attemptsRemaind > 0 ? `Let's try again, ${name}!` : `Congratulations, ${name}!`;
   console.log(bye);
 };
