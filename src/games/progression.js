@@ -1,4 +1,7 @@
-import { generateRandomNumber, makeProgression } from '../utils.js';
+import generateRandomNumber from '../utils.js';
+import play from '../index.js';
+
+const title = 'What number is missing in the progression?';
 
 const PROGRESSION_SIZE = 10;
 const FIRST_RANGE_MIN = 1;
@@ -7,7 +10,16 @@ const STEP_RANGE_MIN = 1;
 const STEP_RANGE_MAX = 10;
 const placeholder = '..';
 
-export default () => {
+const makeProgression = (first, step, size) => {
+  const progression = [first];
+  for (let i = 1; i < size; i += 1) {
+    progression[i] = progression[i - 1] + step;
+  }
+
+  return progression;
+};
+
+const round = () => {
   const first = generateRandomNumber(FIRST_RANGE_MIN, FIRST_RANGE_MAX);
   const step = generateRandomNumber(STEP_RANGE_MIN, STEP_RANGE_MAX);
 
@@ -21,3 +33,5 @@ export default () => {
 
   return [question, answer];
 };
+
+export default () => play(title, round);

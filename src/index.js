@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
-const ATTEMPTS = 3;
+const ROUNDS_NUMBER = 3;
 
 export default (title, round) => {
-  let attemptsRemaind = ATTEMPTS;
+  let roundsRemaind = ROUNDS_NUMBER;
   const name = greeting();
   console.log(title);
 
-  while (attemptsRemaind > 0) {
+  while (roundsRemaind > 0) {
     const [question, answer] = round();
 
     console.log(`Question: ${question}`);
@@ -21,9 +21,9 @@ export default (title, round) => {
     }
 
     console.log('Correct!');
-    attemptsRemaind -= 1;
+    roundsRemaind -= 1;
   }
 
-  const bye = attemptsRemaind > 0 ? `Let's try again, ${name}!` : `Congratulations, ${name}!`;
+  const bye = roundsRemaind > 0 ? `Let's try again, ${name}!` : `Congratulations, ${name}!`;
   console.log(bye);
 };

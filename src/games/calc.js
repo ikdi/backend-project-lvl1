@@ -1,4 +1,7 @@
-import { generateRandomNumber } from '../utils.js';
+import generateRandomNumber from '../utils.js';
+import play from '../index.js';
+
+const title = 'What is the result of the expression?';
 
 const actions = ['+', '-', '*'];
 const calculate = (action, num1, num2) => {
@@ -14,7 +17,7 @@ const calculate = (action, num1, num2) => {
   }
 };
 
-export default () => {
+const round = () => {
   const num1 = generateRandomNumber();
   const num2 = generateRandomNumber();
   const action = actions[generateRandomNumber(0, actions.length - 1)];
@@ -24,3 +27,5 @@ export default () => {
 
   return [question, answer];
 };
+
+export default () => play(title, round);
