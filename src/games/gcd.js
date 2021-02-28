@@ -21,14 +21,15 @@ const calculateGcd = (num1, num2) => {
   return i;
 };
 
-const round = () => {
+const generateRound = () => {
   const num1 = generateRandomNumber(RANGE_MIN, RANGE_MAX);
   const num2 = generateRandomNumber(RANGE_MIN, RANGE_MAX);
 
   const question = `${num1} ${num2}`;
-  const answer = calculateGcd(num1, num2);
+  const rawAnswer = calculateGcd(num1, num2);
+  const answer = rawAnswer.toString(10);
 
   return [question, answer];
 };
 
-export default () => play(title, round);
+export default () => play(title, generateRound);

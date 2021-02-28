@@ -15,7 +15,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const round = () => {
+const generateRound = () => {
   const num = generateRandomNumber(RANGE_MIN, RANGE_MAX);
 
   const question = `${num}`;
@@ -24,4 +24,4 @@ const round = () => {
   return [question, answer];
 };
 
-export default () => play(title, round);
+export default () => play(title, generateRound);

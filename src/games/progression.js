@@ -19,19 +19,20 @@ const makeProgression = (first, step, size) => {
   return progression;
 };
 
-const round = () => {
+const generateRound = () => {
   const first = generateRandomNumber(FIRST_RANGE_MIN, FIRST_RANGE_MAX);
   const step = generateRandomNumber(STEP_RANGE_MIN, STEP_RANGE_MAX);
 
   const progression = makeProgression(first, step, PROGRESSION_SIZE);
 
   const placeholderIndex = generateRandomNumber(0, PROGRESSION_SIZE - 1);
-  const answer = progression[placeholderIndex];
+  const rawAnswer = progression[placeholderIndex];
   progression[placeholderIndex] = placeholder;
 
   const question = progression.join(' ');
+  const answer = rawAnswer.toString(10);
 
   return [question, answer];
 };
 
-export default () => play(title, round);
+export default () => play(title, generateRound);

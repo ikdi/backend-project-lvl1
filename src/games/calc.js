@@ -17,15 +17,16 @@ const calculate = (action, num1, num2) => {
   }
 };
 
-const round = () => {
+const generateRound = () => {
   const num1 = generateRandomNumber();
   const num2 = generateRandomNumber();
   const action = actions[generateRandomNumber(0, actions.length - 1)];
 
   const question = `${num1} ${action} ${num2}`;
-  const answer = calculate(action, num1, num2);
+  const rawAnswer = calculate(action, num1, num2);
+  const answer = rawAnswer.toString(10);
 
   return [question, answer];
 };
 
-export default () => play(title, round);
+export default () => play(title, generateRound);

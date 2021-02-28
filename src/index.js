@@ -1,15 +1,14 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
-const ROUNDS_NUMBER = 3;
+const ROUNDS_COUNT = 3;
 
-export default (title, round) => {
-  let roundsRemaind = ROUNDS_NUMBER;
+export default (title, generateRound) => {
   const name = greeting();
   console.log(title);
 
-  while (roundsRemaind > 0) {
-    const [question, answer] = round();
+  for (let i = 1; i <= ROUNDS_COUNT; i += 1) {
+    const [question, answer] = generateRound();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -17,13 +16,12 @@ export default (title, round) => {
 
     if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      break;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
 
     console.log('Correct!');
-    roundsRemaind -= 1;
   }
 
-  const bye = roundsRemaind > 0 ? `Let's try again, ${name}!` : `Congratulations, ${name}!`;
-  console.log(bye);
+  console.log(`Congratulations, ${name}!`);
 };

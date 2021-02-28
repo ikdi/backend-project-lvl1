@@ -5,7 +5,7 @@ const title = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
-const round = () => {
+const generateRound = () => {
   const num = generateRandomNumber();
   const question = `${num}`;
   const answer = isEven(num) ? 'yes' : 'no';
@@ -13,4 +13,4 @@ const round = () => {
   return [question, answer];
 };
 
-export default () => play(title, round);
+export default () => play(title, generateRound);
