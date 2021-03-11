@@ -5,20 +5,12 @@ const title = 'Find the greatest common divisor of given numbers.';
 const RANGE_MIN = 1;
 const RANGE_MAX = 20;
 
-const calculateGcd = (num1, num2) => {
-  const first = Math.min(num1, num2);
-  const second = num1 === first ? num2 : num1;
-  let i = first;
-
-  while (i > 1) {
-    const restFirst = first % i;
-    const restSecond = second % i;
-    const isDivider = restFirst === 0 && restSecond === 0;
-    if (isDivider) break;
-    i -= 1;
+const calculateGcd = (a, b) => {
+  if (b === 0) {
+    return a;
   }
 
-  return i;
+  return calculateGcd(b, a % b);
 };
 
 const generateRound = () => {

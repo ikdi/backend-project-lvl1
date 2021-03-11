@@ -10,10 +10,10 @@ const STEP_RANGE_MIN = 1;
 const STEP_RANGE_MAX = 10;
 const placeholder = '..';
 
-const makeProgression = (first, step, size) => {
-  const progression = [first];
-  for (let i = 1; i < size; i += 1) {
-    progression[i] = progression[i - 1] + step;
+const makeProgression = (start, step, size) => {
+  const progression = [];
+  for (let i = 0; i < size; i += 1) {
+    progression[i] = step * i + start;
   }
 
   return progression;

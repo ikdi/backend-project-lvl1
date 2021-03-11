@@ -1,5 +1,8 @@
+deploy: install link
 install:
-	npm install
+	npm ci
+link:
+	npm link
 brain-games:
 	node bin/brain-games.js
 publish:
