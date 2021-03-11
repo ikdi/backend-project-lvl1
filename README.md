@@ -15,10 +15,10 @@ $ make deploy
 
 After that, you can run games:
 * ``` $ brain-even```
-* ``` $brain-calc```
-* ``` $brain-gcd```
-* ``` $brain-progression```
-* ``` $brain-prime```
+* ``` $ brain-calc```
+* ``` $ brain-gcd```
+* ``` $ brain-progression```
+* ``` $ brain-prime```
 ## Demo
 
 brain-even game  
