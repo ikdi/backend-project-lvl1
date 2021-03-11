@@ -7,7 +7,7 @@
 
 ## Installation and Usage
 
-You can install a project using make utility im root project directory:
+You can install a project using make utility in root project directory:
 
 ```
 $ make deploy
