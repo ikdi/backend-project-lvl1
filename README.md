@@ -10,7 +10,7 @@
 You can install a project using make utility in root project directory:
 
 ```
-$ make deploy
+$ make setup
 ```
 
 After that, you can run games:
